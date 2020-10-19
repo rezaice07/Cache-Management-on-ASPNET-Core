@@ -1,0 +1,37 @@
+﻿@model ASPNETCore.Cache.Models.PatientListViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row">
+    <h1 class="display-4">Patient Infos</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Cellphone</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <thead>
+            @foreach (var item in Model.PatientInfos)
+            {
+            <tr>
+                <td>@item.PatientSerialNo </td>
+                <td>@item.FullName</td>
+                <td>@item.Cellphone</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+            </tr>
+            }
+        </thead>
+    </table>
+</div>
